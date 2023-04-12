@@ -1,0 +1,160 @@
+:root {
+    --fuenteHeading: 'PT Sans', sans-serif;
+    --fuenteParrafos: 'Open Sans', sans-serif;
+
+    --primario:#0A3871;
+    --gris: #D8DFE8;
+    --blanco: #ffffff;
+    --negro: #000000;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; /* 1 rem = 10px */    
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body {
+    font-family: var(--fuenteParrafos);
+    font-size: 1.6rem;
+    /* line-height: 2; */
+}
+
+.ds-flex{
+    display: flex;
+}
+
+
+
+
+/* FORMULARIO */
+
+.formulario{
+    /* display: block; */
+    margin-top: 6rem;
+    /* width: 90%; */
+    height: 78rem;
+    color: var(--primario);
+
+}
+.formulario__campo{
+    color: var(--primario);
+    margin-top: 4rem;
+    width: 80rem;
+    height: 70rem;
+    border: none;
+}
+.formulario__campo::placeholder{
+    color: var(--primario);
+}
+
+
+/* BOTONES */
+
+.botones{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+@media (min-width: 768px){
+    .botones{
+        justify-content: center;
+        flex-direction: row;
+        /* justify-content: space-evenly; */
+    }
+}
+.boton{
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 1.6rem 6rem;
+    width: 30rem;
+    border-radius: 2rem;
+    border: solid 0.1rem var(--primario);
+}
+.botones .boton_encriptar{
+    background-color: var(--primario);
+    color: var(--blanco);
+}
+.botones .boton_desincriptar{
+    color: var(--primario);
+    background-color: var(--gris);
+}
+/*  ASIDE */
+aside{
+    margin: auto 0;
+    border: .1rem solid #000000;
+    border-radius: 3.2rem;
+    height: 85rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 10px 12px 16px 0px rgba(196,190,196,0.7);
+}
+
+
+.previsualizar{
+    border: blueviolet;
+}
+.previsualizar__texto-bold{
+    /* font-family: 'Inter'; */
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 120%;
+    text-align: center;
+}
+            /* Ingresa el texto que desees encriptar o desencriptar. */
+.previsualizar__texto{
+    margin: auto;
+    width: 336px;
+    height: 48px;    
+    /* font-family: 'Inter'; */
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+}
+
+
+
+/* principal */
+
+.contenido-principal{
+    display: grid;
+    width: min(90%, 120rem);
+    margin: 0 auto;
+    position: relative;
+    height: min(80%, 80rem);
+    gap: 1.4rem;
+}
+@media (min-width: 768px){
+    .contenido-principal{
+        display: grid;
+        /* flex-direction: row; */
+        grid-template-columns: .5fr 2fr 1fr;
+        column-gap: 1.4rem;
+        justify-content: start;
+    }
+}
+/* .desincriptador{
+    display: flex;
+    flex-direction: column;
+} */
+
+/* LOGO */
+
+.logo{
+    color: var(--primario);
+    font-size: 4rem;
+    font-weight: bold;
+    width: 9rem;
+}
+.logo h1{
+    margin:0   ;
+}
