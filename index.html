@@ -9,29 +9,47 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <main class="contenido-principal">
-        <div class="logo">
-            <h1> a </h1>
-        </div>
-        <div class="desincriptador">
-            <form class="formulario">
-                <div class="ds-flex">
-                    <textarea placeholder="Ingrese el texto aqui" class="formulario__campo" id=""></textarea>
+    <div class="contenido_principal contenedor">
+        <header>
+            <div class="logo">
+                <img src="img/logo.svg" alt="logo_a">
+            </div>
+        </header>
+        <main class="encriptador-control">
+            <form class="formulario ">
+                <div>
+                    <textarea id="miTextarea" type="text" placeholder="Ingresa tu texto aqui"></textarea>
                 </div>
             </form>
-            <div class="botones">
-                <a class="boton_encriptar boton" href="#">Encriptar</a>
-                <a class="boton_desincriptar boton" href="#">Desincriptar</a>
+            <div class="advertencia">
+                <svg width="17px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0v-4.5A.75.75 0 0110 5zm0 10a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path>
+                </svg>
+                <small>Solo letras minúsculas y sin acentos</small>
             </div>
-        </div>
-        
-        <aside>
+            <div class="botones">
+                <button class="boton boton_encriptar" onclick="encriptar()" id="encrypt">Encriptar</button>
+                <button class="boton boton_desincriptar" onclick="desencriptar()" id="decrypt">Desencriptar</button>
+            </div>
+        </main>
+        <aside class="previsualizar-caja" id="aside">
             <div class="previsualizar">
-                <img src="img/Muñeco.svg" alt="previsualizar">
-                <p class="previsualizar__texto-bold">Ningún mensaje fue encontrado</p>
-                <p class="previsualizar__texto">Ingresa el texto que desees encriptar o desencriptar.</p>
+                <textarea class="texto_copia" id="outptTextArea" data-gramm="false" placeholder=""></textarea>
+                <div class="previsualizar_contenido" id="miDiv">
+                    <div class="previsualizar__logo">
+                        <img src="img/Muñeco.svg" alt="Vacio">
+                    </div>
+                    <div>
+                        <p class="previsualizar__texto-bold">Ningún mensaje fue encontrado</p>
+                        <p class="previsualizar__texto">Ingresa el texto que desees encriptar o desencriptar.</p>
+                    </div>
+                </div>
+                <div class="contenedor-boton-copy">
+                    <button class="boton boton-copiar" id="copy">Copiar</button>
+                </div>
             </div>
         </aside>
-    </main>
-    </body>
+    </div>
+    <script src="js/scripts.js"></script>
+</body>
 </html>

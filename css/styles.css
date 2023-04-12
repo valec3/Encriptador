@@ -8,6 +8,7 @@
     --negro: #000000;
 }
 
+
 html {
     box-sizing: border-box;
     font-size: 62.5%; /* 1 rem = 10px */    
@@ -21,38 +22,147 @@ body {
     /* line-height: 2; */
 }
 
-.ds-flex{
+
+/* UTILIDADES */
+
+.contenedor{
+    width: min(90%,130rem);
+    margin: auto;
+}
+.dsp-flex{
     display: flex;
+    justify-content: center;
 }
 
+/* PRINCIPAL */
+.contenido_principal{
+    margin-top: 1rem;
 
+}
+@media (min-width: 1000px){
+    .contenido_principal{
+        display: grid;
+        grid-template-columns: 1fr 3fr 2fr;
+        gap: 1rem;
+    }
+}
+
+.encriptador-control{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+/* IZQUIERDA ASIDE */
+.previsualizar-caja{
+    height: 100%;
+    padding: 1rem;
+    border: solid var(--primario) .1rem;
+    border-radius: 3.2rem;
+    box-shadow: 10px 12px 16px 0px rgba(196,190,196,0.7);
+}
+.previsualizar{
+    width: 100%;
+
+}
+@media (min-width: 1000px){
+    .previsualizar{
+        height: 100%;
+        width: 100%;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        display: flex;
+        gap: 1rem;
+    }
+}
+.previsualizar_contenido{
+    width: 90%;
+    margin: auto;
+}
+.previsualizar__logo{
+    display: none;
+    justify-content: center;
+}
+@media (min-width: 1000px){
+    .previsualizar__logo{
+        display: flex;
+    }
+}
+.previsualizar__logo img{
+    width: 80%;
+    max-width: 100%;
+    height: auto;
+}
+.previsualizar__texto-bold{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 120%;
+    text-align: center;
+}
+.previsualizar__texto{
+    margin: auto;
+    width: 33.6rem;
+    height: 48px;    
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+}
 
 
 /* FORMULARIO */
-
 .formulario{
-    /* display: block; */
-    margin-top: 6rem;
-    /* width: 90%; */
-    height: 78rem;
-    color: var(--primario);
-
+    margin-top: 7rem;
 }
-.formulario__campo{
-    color: var(--primario);
-    margin-top: 4rem;
-    width: 80rem;
-    height: 70rem;
+.formulario textarea{
+    height: 45rem;
+    /* width: 70rem; */
     border: none;
+    resize: none;
+    width: 100%;
 }
-.formulario__campo::placeholder{
+@media (min-width: 1000px){
+    .formulario textarea{
+        
+        height: 70rem;
+    }
+}
+.formulario textarea::placeholder{
+    color: var(--primario);
+    font-size: 2rem;
+}
+
+.advertencia {
+    padding: 0px 10px;
+    display: flex;
+    align-items: center;
+    gap: .2rem;
     color: var(--primario);
 }
 
 
-/* BOTONES */
+.texto_copia{
+    border: none;
+    display: none;
+    margin-top: 3rem;
+    height: 90%;
+    resize: none;
+    outline: none;
+}
+.boton-copiar{
+    display: none;
+}
+.contenedor-boton-copy{
+    width: 95%;
+    margin: 1.5rem 0;
+}
+
+/* BOTON */
 
 .botones{
+    margin-top: 2rem;
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -62,15 +172,16 @@ body {
     .botones{
         justify-content: center;
         flex-direction: row;
-        /* justify-content: space-evenly; */
     }
 }
 .boton{
+    width: 100%;
+    cursor: pointer;
     text-align: center;
     font-weight: bold;
     text-decoration: none;
-    padding: 1.6rem 6rem;
-    width: 30rem;
+    /* min-width: 30rem; */
+    padding: 1.5rem 6rem;
     border-radius: 2rem;
     border: solid 0.1rem var(--primario);
 }
@@ -82,79 +193,10 @@ body {
     color: var(--primario);
     background-color: var(--gris);
 }
-/*  ASIDE */
-aside{
-    margin: auto 0;
-    border: .1rem solid #000000;
-    border-radius: 3.2rem;
-    height: 85rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    box-shadow: 10px 12px 16px 0px rgba(196,190,196,0.7);
-}
 
-
-.previsualizar{
-    border: blueviolet;
-}
-.previsualizar__texto-bold{
-    /* font-family: 'Inter'; */
-    font-style: normal;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 120%;
-    text-align: center;
-}
-            /* Ingresa el texto que desees encriptar o desencriptar. */
-.previsualizar__texto{
-    margin: auto;
-    width: 336px;
-    height: 48px;    
-    /* font-family: 'Inter'; */
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 150%;
-    text-align: center;
-}
-
-
-
-/* principal */
-
-.contenido-principal{
-    display: grid;
-    width: min(90%, 120rem);
-    margin: 0 auto;
-    position: relative;
-    height: min(80%, 80rem);
-    gap: 1.4rem;
-}
-@media (min-width: 768px){
-    .contenido-principal{
-        display: grid;
-        /* flex-direction: row; */
-        grid-template-columns: .5fr 2fr 1fr;
-        column-gap: 1.4rem;
-        justify-content: start;
-    }
-}
-/* .desincriptador{
-    display: flex;
-    flex-direction: column;
-} */
 
 /* LOGO */
 
 .logo{
-    color: var(--primario);
-    font-size: 4rem;
-    font-weight: bold;
-    width: 9rem;
-}
-.logo h1{
-    margin:0   ;
+    margin: 2rem;
 }
