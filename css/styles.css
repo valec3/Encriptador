@@ -26,7 +26,7 @@ body {
 /* UTILIDADES */
 
 .contenedor{
-    width: min(90%,130rem);
+    width: min(94%,140rem);
     margin: auto;
 }
 .dsp-flex{
@@ -81,7 +81,6 @@ body {
 
 .previsualizar_contenido{
     width: 90%;
-    /* margin: auto; */
 }
 .previsualizar__logo{
     display: none;
@@ -190,7 +189,7 @@ body {
     font-weight: bold;
     text-decoration: none;
     /* min-width: 30rem; */
-    padding: 1.5rem 6rem;
+    padding: 1.5rem 0;
     border-radius: 2rem;
     border: solid 0.1rem var(--primario);
 }

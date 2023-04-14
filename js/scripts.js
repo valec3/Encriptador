@@ -8,6 +8,7 @@ miTextarea.addEventListener('input', function() {
     if (miTextarea.value === '') {
         miDiv.style.display = 'block';
         miParrafo.style.display = "none"
+        btnCopy.style.display = "none"
     } 
 });
 
@@ -18,6 +19,12 @@ const diccionario = {
     'o': 'ober',
     'u': 'ufat'
 };
+const diccionarioInvertido = Object.entries(diccionario).reduce((obj, [key, value]) => {
+    obj[value] = key;
+    return obj;
+    }, {});
+
+
 
 function encriptar() {
     miDiv.style.display = 'none';
@@ -35,11 +42,12 @@ function encriptar() {
     miParrafo.innerHTML = textoEncriptado;
 }
 
-function desencriptar() {
+function desencriptar(texto) {
     let textoDesencriptado = '';
-
+    for(const tex of texto){
+        textoDesencriptado+=tex.replace()
+    }
     miParrafo.innerHTML = textoDesencriptado;
-    console.log(diccionarioInvertido)
 }
 
 function decrypt(){
@@ -52,11 +60,6 @@ function decrypt(){
         }
         writeResult(encrypted);
     }
-}
-
-function writeResult(text){
-    outptTextArea.value = text;
-    showOrHiddenTextOutput("none", "block");
 }
 
 
