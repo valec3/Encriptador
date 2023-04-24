@@ -10,8 +10,12 @@ miTextarea.addEventListener('input', function() {
         miParrafo.style.display = "none"
         btnCopy.style.display = "none"
     } 
+    validarInput(miTextarea);
+
 });
 
+
+//DICCIONARIO
 const diccionario = {
     'e': 'enter',
     'i': 'imes',
@@ -19,13 +23,13 @@ const diccionario = {
     'o': 'ober',
     'u': 'ufat'
 };
-const diccionarioInvertido = Object.entries(diccionario).reduce((obj, [key, value]) => {
-    obj[value] = key;
-    return obj;
-    }, {});
 
 
-
+function validarInput(entrada) {
+    const regex = /[W]|[áéíóúÁÉÍÓÚñÑ¿¡.,«»“”‘’'"´`+*()\-–—/\\=|#@^\[\]{}%$§&~;:<>!?]|[A-Z]/g;
+    const cleanedText = miTextarea.value.replace(regex, "");
+    miTextarea.value = cleanedText;
+}
 function encriptar() {
     miDiv.style.display = 'none';
     let textoEncriptado = '';
@@ -42,14 +46,7 @@ function encriptar() {
     miParrafo.innerHTML = textoEncriptado;
 }
 
-function desencriptar(texto) {
-    let textoDesencriptado = '';
-    for(const tex of texto){
-        textoDesencriptado+=tex.replace()
-    }
-    miParrafo.innerHTML = textoDesencriptado;
-}
-
+/*
 function decrypt(){
     if (inptTextArea.value !== ""){
         const text = inptTextArea.value;
@@ -61,6 +58,9 @@ function decrypt(){
         writeResult(encrypted);
     }
 }
-
+*/
+function decrypt(texto) {
+    console.log(":(")
+}
 
 
