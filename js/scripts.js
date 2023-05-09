@@ -31,7 +31,6 @@ function validarInput(entrada) {
     miTextarea.value = cleanedText;
 }
 function encriptar() {
-    miDiv.style.display = 'none';
     let textoEncriptado = '';
     
     for (const letra of miTextarea.value.toLowerCase()) {
@@ -41,26 +40,28 @@ function encriptar() {
             textoEncriptado += letra;
         }
     }
+    habilitarDisplays(textoEncriptado)
+}
+
+
+function decrypt() {
+    const text = miTextarea.value;
+    let encrypted = text;
+    for (const key in diccionario) {
+        const regex = new RegExp(diccionario[key], "g");
+        encrypted = encrypted.replace(regex, key);
+    }
+    habilitarDisplays(encrypted)
+}
+function copiarTexto(){
+    navigator.clipboard.writeText(miParrafo.textContent);
+    alert("Texto copiado al portapapeles");
+}
+function habilitarDisplays(texto){
+    miDiv.style.display = 'none';
     miParrafo.style.display = "block";
     btnCopy.style.display = "block";
-    miParrafo.innerHTML = textoEncriptado;
+    miParrafo.innerHTML = texto;
 }
-
-/*
-function decrypt(){
-    if (inptTextArea.value !== ""){
-        const text = inptTextArea.value;
-        let encrypted = text;
-        for (const key in keysEncoded) {
-            const regex = new RegExp(keysEncoded[key], "g");
-            encrypted = encrypted.replace(regex, key);
-        }
-        writeResult(encrypted);
-    }
-}
-*/
-function decrypt(texto) {
-    console.log(":(")
-}
-
+btnCopy.addEventListener("click",copiarTexto)
 
